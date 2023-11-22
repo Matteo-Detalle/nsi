@@ -22,7 +22,10 @@ class Arbre:
         return self.label
     
     def __str__(self):
-        return f"les enfants de {self.label} sont {self.getD()} à droite et {self.getG()} à gauche"
+        if self.est_une_feuille() == True:
+            return f"L'arbre n'est qu'une feuille de parent {self.label}"
+        else:
+            return f"les enfants de {self.label} sont {self.getD()} à droite et {self.getG()} à gauche"
 
 def affichage(ArbreEle):
     if ArbreEle != None:
@@ -31,6 +34,9 @@ def affichage(ArbreEle):
 MonAbre = Arbre('X')
 MonAbre.setD('A')
 MonAbre.setG('B')
+
+MonAbre2 = Arbre("X")
+print(MonAbre2)
 print(MonAbre)
 
         
